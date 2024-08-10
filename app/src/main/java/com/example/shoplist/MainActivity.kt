@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.example.shoplist.MainScreen.MainScreen
 import com.example.shoplist.ui.theme.ShopListTheme
 
 class MainActivity : ComponentActivity() {
