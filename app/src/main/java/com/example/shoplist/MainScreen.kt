@@ -27,6 +27,8 @@ fun MainScreen(modifier: Modifier = Modifier) {
             .background(Color.White)
     ) {
         ShopListLogoSection()
+        // Lista
+        //NavigationIconsSection()
     }
 }
 
@@ -46,5 +48,17 @@ fun ShopListLogoSection(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(18.dp, top = 20.dp)
         )
+    }
+}
+@Composable
+fun NavigationIconsSection(modifier: Modifier = Modifier) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.Blue)
+            .height(70.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
+    ) {
     }
 }
