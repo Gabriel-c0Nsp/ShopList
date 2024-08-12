@@ -14,7 +14,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun ListSection(modifier: Modifier = Modifier) {
@@ -43,14 +45,15 @@ fun Item(modifier: Modifier = Modifier, item: ListItem) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .clip(RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(Color(0xFF0076D5))
             .padding(16.dp)
     ) {
         Column {
             Text(
                 text = item.name,
-                color = Color.White
+                color = Color.White,
+                fontSize = 18.sp
             )
         }
     }
