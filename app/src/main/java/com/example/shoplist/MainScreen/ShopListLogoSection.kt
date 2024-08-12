@@ -19,7 +19,7 @@ fun ShopListLogoSection(modifier: Modifier = Modifier) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.Red)
+            .background(Color(0xFFF13E3E))
             .height(90.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

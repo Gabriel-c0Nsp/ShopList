@@ -25,7 +25,6 @@ fun MainScreen(modifier: Modifier = Modifier) {
             .background(Color.White)
     ) {
         ShopListLogoSection()
-        // ListSection()
-        NavigationIconsSection()
+        ListSection()
     }
 }
