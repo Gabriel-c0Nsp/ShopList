@@ -28,7 +28,6 @@ fun ShopListLogoSection(modifier: Modifier = Modifier) {
             .padding(18.dp, top = 20.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // logo aqui
         Image(
             painter = painterResource(R.drawable.logoshoplist),
             contentDescription = null,

@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ListSection(modifier: Modifier = Modifier) {
-    val items = TestList()
+    val shoppingLists = testShoppingLists()
 
     Column(
         modifier = Modifier
@@ -29,18 +29,16 @@ fun ListSection(modifier: Modifier = Modifier) {
     ) {
         LazyColumn(
             content = {
-                itemsIndexed(items) {index: Int, item: ListItem ->
-                    Item(item = item)
+                itemsIndexed(shoppingLists) { index: Int, shoppingList: ShoppingLists ->
+                    ItemListName(name = shoppingList.name)
                 }
             }
         )
     }
 }
 
-
-
 @Composable
-fun Item(modifier: Modifier = Modifier, item: ListItem) {
+fun ItemListName(modifier: Modifier = Modifier, name: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -51,9 +49,10 @@ fun Item(modifier: Modifier = Modifier, item: ListItem) {
     ) {
         Column {
             Text(
-                text = item.name,
+                text = name,
                 color = Color.White,
-                fontSize = 18.sp
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
             )
         }
     }
