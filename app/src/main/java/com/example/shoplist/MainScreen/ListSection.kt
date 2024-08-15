@@ -19,10 +19,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.shoplist.R
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 @Composable
 fun ListSection(modifier: Modifier = Modifier) {
@@ -35,8 +36,8 @@ fun ListSection(modifier: Modifier = Modifier) {
     ) {
         LazyColumn(
             content = {
-                itemsIndexed(shoppingLists) { index: Int, shoppingList: ShoppingLists ->
-                    ItemListName(name = shoppingList.name)
+                itemsIndexed(shoppingLists) { _, shoppingList: ShoppingLists ->
+                    ListsView(shoppingList = shoppingList)
                 }
             }
         )
@@ -44,8 +45,7 @@ fun ListSection(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ItemListName(modifier: Modifier = Modifier, name: String) {
-
+fun ListsView(shoppingList: ShoppingLists) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -59,7 +59,12 @@ fun ItemListName(modifier: Modifier = Modifier, name: String) {
             modifier = Modifier.weight(1f)
         ) {
             Text(
-                text = name,
+                text = SimpleDateFormat("HH:mm, dd/MM", Locale("pt", "BR")).format(shoppingList.createdAt),
+                color = Color(0xFFE2E2E2),
+                fontSize = 12.sp,
+            )
+            Text(
+                text = shoppingList.name,
                 color = Color.White,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
